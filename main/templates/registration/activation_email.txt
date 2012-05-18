@@ -1,0 +1,4 @@
+Hi hi , bienvenido a  {{ site }}.
+De favor, Activa tu cuenta en: {{ site }}/accounts/activate/{{ activation_key }}
+
+!Diviertete!

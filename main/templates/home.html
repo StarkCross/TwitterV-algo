@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Another Tweeter!</title>
+</head>
+<body style="background:#CECEF6">
+	<div><marquee BGCOLOR="#A4A4A4" width=700 direction=left><a style="color:#8A0808">
+		Welcomeeeeee!!!!</a></marquee>
+	</div>
+	<hr/>
+	{% for user in users %}
+	<div>
+		<h3><a style="color:#B40404">{{ user.nick_name }} - ({{ user.tweets.count }}) </a><a style="color:#0B0B3B">Tweets</a></h3>
+		<a href="{% url show_user user.pk %}">See more</a>
+		<div><h4><a style="color:#B43104">email </a>- {{ user.email }}</h4></div>
+		<div class='tweets'>
+			{% for tweet in user.tweets.all %}
+			<div><a style="color:#0431B4">Tweets:</a> {{ tweet.status }}</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
+	
+	{% for tweet in Tweets %}
+		<div>
+			<h3><a style="color:#B43104">The status is - {{ tweet.status }}</a></h3>
+		</div>
+	{% endfor %}
+</body>
+
+</html>
+

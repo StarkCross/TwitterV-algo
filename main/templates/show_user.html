@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title><h2><a style="color:#B40404">{{ user.nickname }} </a></h2>- <a style="color:#610B0B">My profile!!! </a></title>
+</head>
+<body style="background:#CECEF6">
+	<h3><a href="{% url home %}">+HOME+</a></h3>
+	<h1><a style="color:#B40404">{{ user.nick_name }} {{ tweets.user.count }}</a></h1>
+
+	<img src="{{ MEDIA_URL }}{{ user.image_owner }}"/>
+
+
+
+	<h3><p><a style="color:#8A0808">Email:</a></h3><h4>{{ user.email }}</p></h4>
+	<h3><p><a style="color:#8A0808">Cumpleaños:</a></h3><h4>{{ user.birth_date }}</p></h4>
+	<h3><p><a style="color:#8A0808">Ubicacion:</a></h3><h4>{{ user.place }}</p></h4>
+	<h3><p><a style="color:#8A0808">Lugar de nacimiento:</a></h3><h4>{{ user.place_birth }}</p></h4>
+	<h3><p><a style="color:#8A0808">Biografia:</a></h3><h4>{{ user.biography }}</p></h4>
+	<p>{% for tweet in user.tweets.all %}
+		<h4><a style="color:#0431B4">Tweets:</a></h4>
+		<div><a style="color:#A61E00"> Status: </a>{{ tweet.status }}</div>
+		{% endfor %}
+	</p>
+</body>
+
+</html>
